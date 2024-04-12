@@ -27,7 +27,7 @@ export default function Header() {
 
     const handleSignout = async () => {
         try {
-          const res = await fetch('/api/user/signout', {
+          const res = await fetch('https://blog-deploy-api.vercel.app/api/user/signout', {
             method: 'POST',
           });
           const data = await res.json();
@@ -46,11 +46,11 @@ export default function Header() {
         const urlParams = new URLSearchParams(location.search);
         urlParams.set('searchTerm', searchTerm);
         const searchQuery = urlParams.toString();
-        navigate(`/search?${searchQuery}`);
+        navigate(`https://blog-deploy-api.vercel.app//search?${searchQuery}`);
       };
   return (
     <Navbar className="border-b-2">
-        <Link to="/" className='self center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
+        <Link to="https://blog-deploy-api.vercel.app/" className='self center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white'>
             <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">Muse </span>
             Matrix
         </Link>
@@ -93,7 +93,7 @@ export default function Header() {
                 </Dropdown>
             ):
             (
-                <Link to='/signin'>
+                <Link to='https://blog-deploy-api.vercel.app/signin'>
                 <button class="relative inline-flex items-center justify-center p-2 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800" outline>Sign In </button>
                 </Link>
 
@@ -103,25 +103,25 @@ export default function Header() {
         </div>
         <Navbar.Collapse>
                 <Navbar.Link active={path ==='/'} as={'div'}>
-                    <Link to='/'>
+                    <Link to='https://blog-deploy-api.vercel.app/'>
                         Home
                     </Link>
                 </Navbar.Link>
               
                 <Navbar.Link active={path ==='/about'} as={'div'}>
-                    <Link to='/about'>
+                    <Link to='https://blog-deploy-api.vercel.app/about'>
                         About
                     </Link>
                 </Navbar.Link>
 
                    
-                <Navbar.Link active={path ==='/dashboard?tab=profile'} as={'div'}>
+                <Navbar.Link active={path ==='https://blog-deploy-api.vercel.app/dashboard?tab=profile'} as={'div'}>
                     <Link to='/dashboard?tab=profile'>
                         Profile
                     </Link>
                 </Navbar.Link>
 
-                <Navbar.Link active={path ==='/dashboard?tab=dash'} as={'div'}>
+                <Navbar.Link active={path ==='https://blog-deploy-api.vercel.app/dashboard?tab=dash'} as={'div'}>
                     <Link to='/dashboard?tab=dash'>
                         Dashboard
                     </Link>
